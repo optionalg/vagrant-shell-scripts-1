@@ -11,3 +11,4 @@ pear install phing/phing
 cd /usr/local/bin
 wget http://getcomposer.org/composer.phar
 chmod a+x composer.phar
+ln -s composer.phar composer
