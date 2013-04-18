@@ -30,3 +30,7 @@ pear install --alldeps phpmd/PHP_PMD
 
 # PHP CodeSniffer.
 pear install pear/PHP_CodeSniffer
+
+# CodeSniffer for PSR's.
+cd /usr/share/php/PHP/CodeSniffer/Standards
+git clone https://github.com/klaussilveira/phpcs-psr PSR
