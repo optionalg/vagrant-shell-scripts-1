@@ -3,34 +3,16 @@
 # Upgrades PEAR.
 pear upgrade PEAR
 
+# XSL for phpDox and XDebug for code coverage.
+aptitude install -y php5-xsl php5-xdebug
+
 # PHPUnit.
 pear config-set auto_discover 1
-pear channel-discover pear.phpunit.de
-pear install phpunit/PHPUnit
+pear channel-discover pear.netpirates.net
+pear install pear.phpqatools.org/phpqatools theseer/phpDox-alpha
 
-# PPW, PHPCPD, PHPLOC.
-pear channel-discover components.ez.no
-
-# PPW.
-pear install phpunit/ppw
-
-# PHPCPD.
-pear install phpunit/phpcpd
-
-# PHPLOC.
-pear install phpunit/phploc
-
-# PDepend.
-pear channel-discover pear.pdepend.org
-pear install pdepend/PHP_Depend-beta
-
-# PHPMD (depends on PDepend)
-pear channel-discover pear.phpmd.org
-pear install --alldeps phpmd/PHP_PMD
-
-# PHP CodeSniffer.
-pear install pear/PHP_CodeSniffer
-
-# CodeSniffer for PSR's.
-cd /usr/share/php/PHP/CodeSniffer/Standards
-git clone https://github.com/klaussilveira/phpcs-psr PSR
+# CS Fixer.
+cd /usr/local/bin/
+curl -O http://cs.sensiolabs.org/get/php-cs-fixer.phar
+chmod +x php-cs-fixer.phar
+ln -s php-cs-fixer.phar php-cs-fixer
